@@ -6,9 +6,16 @@ import javax.sound.sampled.Clip;
 import java.io.File;
 import java.net.URL;
 
+/**
+ * Clase que contiene la logica del procesamiento de sonidos en el programa.
+ */
 public class Sonido {
     private Clip clip;
 
+    /**
+     * Carga un sonido desde la ruta indicada.
+     * @param ruta Ruta en la que se encuentra el sonido que va a ser cargado.
+     */
     public void cargarSonido(String ruta) {
         try {
             URL url = getClass().getResource(ruta);
@@ -20,6 +27,9 @@ public class Sonido {
         }
     }
 
+    /**
+     * Reproduce el sonido que haya sido cargado.
+     */
     public void reproducir() {
         if (clip != null) {
             clip.setFramePosition(0);
@@ -27,18 +37,28 @@ public class Sonido {
         }
     }
 
+    /**
+     * Si el sonido que fue cargado esta detenido, lo reanuda
+     * indefinidamente.
+     */
     public void reanudar() {
         if (clip != null) {
             clip.loop(Clip.LOOP_CONTINUOUSLY);
         }
     }
 
+    /**
+     * Detiene un sonido si esta siendo reproducido.
+     */
     public void detener() {
         if (clip != null && clip.isRunning()) {
             clip.stop();
         }
     }
 
+    /**
+     * Reproduce en bucle el sonido que haya sido cargado.
+     */
     public void reproducirEnBucle() {
         if (clip != null) {
             clip.setFramePosition(0);

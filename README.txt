@@ -1,10 +1,10 @@
-El programa lee y muestra una partida guardada en un archivo en formato PGN.
+Para compilar el programa dentro de un IDE, asegurate de que el IDE tenga configurado la carpeta
+media como carpeta de recursos. De lo contrario, el programa lanzará la excepción "NullPointerException" porque
+no encuentra las rutas de las imagenes y los sonidos que utiliza el proyecto.
 
-Para visualizar una partida sobreescribe el archivo partida.pgn ubicado en la ruta media/partida/ 
-y presiona las flechas derecha e izquierda de tu teclado para avanzar y retroceder movimientos.
+Si utilizas Intellij IDEA como IDE, puedes configurar la carpeta llendo a project structures -> modules, le das click
+a la carpeta media y luego al apartado en dónde dice "resources". Finalmente le das en apply y ya el proyecto debería
+compilar normalmente.
 
-Por defecto, el programa siempre inicia la visualización de cada partida desde 
-la posición inicial del tablero.
-
-
-***Hecho por Santiago Torres***
+Si aún así no logras configurar la carpeta media, entonces puedes abrir el proyecto directamente desde el jar
+almacenado en la carpeta out-> artifacts -> NeoChess_jar.
